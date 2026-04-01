@@ -97,19 +97,28 @@ export default function Contact() {
     setErrMsg('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          subject: 'New Contact Form Submission — Growth Leads Marketing',
+          from_name: 'Growth Leads Marketing Website',
+          name:             form.name,
+          email:            form.email,
+          'Business Name':  form.business || 'Not provided',
+          'Phone Number':   form.phone    || 'Not provided',
+          message:          form.message,
+        }),
       })
 
       const data = await res.json()
 
-      if (res.ok) {
+      if (data.success) {
         setStatus('success')
         setForm(EMPTY_FORM)
       } else {
-        setErrMsg(data.error || 'Something went wrong. Please try again.')
+        setErrMsg(data.message || 'Something went wrong. Please try again.')
         setStatus('error')
       }
     } catch {
