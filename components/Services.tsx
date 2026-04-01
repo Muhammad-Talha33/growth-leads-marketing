@@ -1,10 +1,10 @@
 import {
   Share2,
   Target,
-  Globe,
+  Search,
   Zap,
   Palette,
-  BarChart2,
+  MapPin,
 } from 'lucide-react'
 
 const SERVICES = [
@@ -23,9 +23,9 @@ const SERVICES = [
     border: 'hover:border-[#F97316]/30',
   },
   {
-    icon: Globe,
-    title: 'Google Ads Campaigns',
-    desc: 'Capture high-intent buyers the moment they search. Our Google Ads strategies maximize your budget efficiency while delivering consistent, trackable results.',
+    icon: Search,
+    title: 'Search Engine Optimization (SEO)',
+    desc: 'Rank higher, get found faster. We optimize your website with proven on-page, off-page, and technical SEO strategies that drive sustainable organic traffic and long-term visibility.',
     accent: 'bg-emerald-50 text-emerald-600',
     border: 'hover:border-emerald-300',
   },
@@ -44,9 +44,9 @@ const SERVICES = [
     border: 'hover:border-pink-300',
   },
   {
-    icon: BarChart2,
-    title: 'Funnel & Conversion Optimization',
-    desc: 'We audit, design, and refine your sales funnels to convert more visitors into paying customers — eliminating drop-off points and maximizing every marketing dollar spent.',
+    icon: MapPin,
+    title: 'Google Business Profile Optimization',
+    desc: 'Dominate local search results with a fully optimized Google Business Profile. We enhance your listing to attract nearby customers, boost map rankings, and build local credibility.',
     accent: 'bg-indigo-50 text-indigo-600',
     border: 'hover:border-indigo-300',
   },
