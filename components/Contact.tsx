@@ -165,8 +165,8 @@ export default function Contact() {
                   </div>
 
                   {/* Text */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-0.5">
+                  <div className="flex-1 min-w-0 overflow-hidden">
+                    <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                       <p className="text-xs font-bold uppercase tracking-wider text-gray-400">{card.label}</p>
                       {card.badge && (
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${card.badgeCls}`}>
@@ -174,7 +174,7 @@ export default function Contact() {
                         </span>
                       )}
                     </div>
-                    <p className={`font-bold text-[#0B1F3A] truncate ${card.icon === 'mail' ? 'text-sm' : 'text-base'}`}>
+                    <p className={`font-bold text-[#0B1F3A] ${card.icon === 'mail' ? 'text-sm break-all' : 'text-base truncate'}`}>
                       {card.value}
                     </p>
                     <p className="text-gray-400 text-xs mt-0.5">{card.sub}</p>
@@ -194,9 +194,9 @@ export default function Contact() {
               )
 
               return card.href ? (
-                <a key={card.label} href={card.href} className="block">{inner}</a>
+                <a key={card.label} href={card.href} className="block w-full min-w-0 overflow-hidden">{inner}</a>
               ) : (
-                <div key={card.label}>{inner}</div>
+                <div key={card.label} className="w-full min-w-0 overflow-hidden">{inner}</div>
               )
             })}
 
