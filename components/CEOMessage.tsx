@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function CEOMessage() {
   return (
     <section id="ceo" className="bg-[#F8FAFC] py-20 lg:py-28">
@@ -21,10 +23,13 @@ export default function CEOMessage() {
               {/* Left — CEO identity */}
               <div className="bg-[#0B1F3A] flex flex-col items-center justify-center p-8 text-center">
                 {/* Avatar placeholder */}
-                <div className="w-24 h-24 rounded-full bg-[#0F4C81] border-4 border-white/20 flex items-center justify-center mb-4 shadow-lg">
-                  <svg className="w-12 h-12 text-white/70" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
-                  </svg>
+                <div className="w-24 h-24 rounded-full bg-[#0F4C81] border-4 border-white/20 mb-4 shadow-lg overflow-hidden relative">
+                  <Image
+                    src="/brand_assets/ceo.jpeg"
+                    alt="Qamar Umar — Founder & CEO"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 {/* Name & Title */}
